@@ -1,0 +1,21 @@
+.tries {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.try-square {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid black;
+  margin: 0 5px;
+}
+
+.correct {
+  background-color: green;
+}
+
+.wrong {
+  background-color: red;
+}
