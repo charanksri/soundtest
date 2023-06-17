@@ -68,21 +68,29 @@ userInput.addEventListener("change", (event) => {
       .querySelector(".try-square:nth-child(" + triesLeft + ")")
       .classList.add("correct");
   } else {
-    document.getElementById("answer-text").textContent =
-      "Sorry, that's not the correct answer.";
+    document.getElementById("answer-text").textContent = "";
     document
       .querySelector(".try-square:nth-child(" + triesLeft + ")")
       .classList.add("wrong");
   }
 
   triesLeft--;
-
   if (triesLeft === 0) {
     userInput.disabled = true;
     document.getElementById("submit-button").disabled = true;
-    document.getElementById("answer-text").textContent =
-      "Game Over. You've used all your tries.";
   }
-
-  userInput.value = "";
 });
+
+// Styling for the answer message
+const answerText = document.getElementById("answer-text");
+answerText.style.color = "white";
+
+// Styling for the tries squares
+const triesSquares = document.querySelectorAll(".try-square");
+triesSquares.forEach((square) => {
+  square.style.backgroundColor = "white";
+});
+
+// Styling for the SoundCloud player
+const soundCloudPlayer = document.querySelector("iframe");
+soundCloudPlayer.style.marginBottom = "20px";

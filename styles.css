@@ -1,7 +1,13 @@
-/* Existing styles... */
+body {
+  background-color: black;
+}
 
 .container {
   text-align: center;
+}
+
+.title {
+  color: white;
 }
 
 .button-container {
@@ -76,6 +82,36 @@
   background-color: white;
   border: 1px solid black;
   margin: 0 5px;
+}
+
+.try-square.correct {
+  background-color: green;
+}
+
+.try-square.wrong {
+  background-color: red;
+}
+
+.sound-name {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.sound-name input {
+  margin-right: 10px;
+}
+
+.sound-name button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.sound-name p {
+  margin-top: 10px;
 }
 
 /* Existing styles... */
