@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My SoundCloud Player</title>
+    <title>My Spotify Player</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
-      <h1 class="title">My SoundCloud Player</h1>
+      <h1 class="title">My Spotify Player</h1>
 
       <div class="button-container">
         <button id="instructions-button" class="instructions-button">
@@ -21,33 +21,31 @@
         <span id="popup-close-button" class="popup-close">&times;</span>
         <div class="popup-content">
           <p>
-            These are the instructions for using the SoundCloud audio player:
+            These are the instructions for using the Spotify embedded player:
           </p>
           <ul>
             <li>
-              Step 1: Replace 'YOUR_SOUND_CLOUD_TRACK_URL' with the actual
-              SoundCloud track URL.
+              Step 1: Replace 'YOUR_SPOTIFY_TRACK_URI' with the actual Spotify
+              track URI.
             </li>
             <li>Step 2: Save the file and open it in a web browser.</li>
-            <li>
-              Step 3: Click the play button on the embedded audio player to
-              start playing the track.
-            </li>
           </ul>
         </div>
       </div>
 
       <div class="overlay" id="instruction-overlay"></div>
 
-      <!-- Replace 'YOUR_SOUND_CLOUD_TRACK_URL' with the actual SoundCloud track URL -->
-      <iframe
-        width="300"
-        height="80"
-        scrolling="no"
-        frameborder="no"
-        allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=YOUR_SOUND_CLOUD_TRACK_URL"
-      ></iframe>
+      <div class="spotify-player">
+        <!-- Replace 'YOUR_SPOTIFY_TRACK_URI' with the actual Spotify track URI -->
+        <iframe
+          src="https://open.spotify.com/embed/track/YOUR_SPOTIFY_TRACK_URI"
+          width="300"
+          height="80"
+          frameborder="0"
+          allowtransparency="true"
+          allow="encrypted-media"
+        ></iframe>
+      </div>
 
       <div class="tries">
         <div class="try-square"></div>

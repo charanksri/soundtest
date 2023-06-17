@@ -19,12 +19,14 @@ instructionOverlay.addEventListener("click", () => {
   instructionOverlay.style.display = "none";
 });
 
-// SoundCloud player initialization
-// Replace 'YOUR_SOUND_CLOUD_TRACK_URL' with the actual SoundCloud track URL
-const soundCloudPlayer = document.querySelector("iframe");
-const soundCloudURL =
-  "https://soundcloud.com/lildurk/all-my-life-feat-j-cole?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing";
-soundCloudPlayer.src = `https://w.soundcloud.com/player/?url=${soundCloudURL}`;
+// Existing JavaScript code
+
+// Spotify player initialization
+const spotifyPlayer = document.querySelector(".spotify-player");
+const spotifyTrackURI = "YOUR_SPOTIFY_TRACK_URI";
+spotifyPlayer.innerHTML = `<iframe src="https://open.spotify.com/embed/track/${spotifyTrackURI}" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`;
+
+// Existing JavaScript code
 
 // Track name submission functionality
 const userInput = document.getElementById("sound-name-input");
