@@ -22,7 +22,8 @@ instructionOverlay.addEventListener("click", () => {
 // SoundCloud player initialization
 // Replace 'YOUR_SOUND_CLOUD_TRACK_URL' with the actual SoundCloud track URL
 const soundCloudPlayer = document.querySelector("iframe");
-const soundCloudURL = "YOUR_SOUND_CLOUD_TRACK_URL";
+const soundCloudURL =
+  "https://soundcloud.com/lildurk/all-my-life-feat-j-cole?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing";
 soundCloudPlayer.src = `https://w.soundcloud.com/player/?url=${soundCloudURL}`;
 
 // Track name submission functionality
@@ -74,7 +75,7 @@ userInput.addEventListener("input", () => {
 
   // Make API call to Spotify API for autocomplete suggestions
   // Replace 'YOUR_SPOTIFY_API_ENDPOINT' with the actual Spotify API endpoint
-  fetch(`YOUR_SPOTIFY_API_ENDPOINT?q=${query}`)
+  fetch(`https://api.spotify.com/v1/search?q=${query}`)
     .then((response) => response.json())
     .then((data) => {
       const tracks = data.tracks.items;
