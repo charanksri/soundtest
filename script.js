@@ -8,6 +8,27 @@ async function getCorrectAnswer() {
   // Code for getting the correct answer from Spotify API...
 }
 
+// Handle instructions popup
+const instructionsButton = document.getElementById("instructions-button");
+const instructionsPopup = document.getElementById("instructions-popup");
+const popupCloseButton = document.getElementById("popup-close-button");
+const instructionOverlay = document.getElementById("instruction-overlay");
+
+instructionsButton.addEventListener("click", () => {
+  instructionsPopup.classList.add("show");
+  instructionOverlay.classList.add("show");
+});
+
+popupCloseButton.addEventListener("click", () => {
+  instructionsPopup.classList.remove("show");
+  instructionOverlay.classList.remove("show");
+});
+
+instructionOverlay.addEventListener("click", () => {
+  instructionsPopup.classList.remove("show");
+  instructionOverlay.classList.remove("show");
+});
+
 // Handle user input and autocomplete functionality
 const userInput = document.getElementById("sound-name-input");
 const autocompleteDropdown = document.getElementById("autocomplete-dropdown");
@@ -37,7 +58,6 @@ userInput.addEventListener("input", async (event) => {
   });
 });
 
-// Handle user selection
 userInput.addEventListener("change", (event) => {
   const selectedValue = event.target.value.trim();
 
