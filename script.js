@@ -68,7 +68,7 @@ userInput.addEventListener("change", (event) => {
       .querySelector(".try-square:nth-child(" + triesLeft + ")")
       .classList.add("correct");
   } else {
-    document.getElementById("answer-text").textContent = "";
+    document.getElementById("answer-text").textContent = "Sorry, try again.";
     document
       .querySelector(".try-square:nth-child(" + triesLeft + ")")
       .classList.add("wrong");
@@ -88,7 +88,8 @@ answerText.style.color = "white";
 // Styling for the tries squares
 const triesSquares = document.querySelectorAll(".try-square");
 triesSquares.forEach((square) => {
-  square.style.backgroundColor = "white";
+  square.style.backgroundColor = "#ddd";
+  square.style.borderRadius = "5px";
 });
 
 // Styling for the SoundCloud player
