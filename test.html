@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SoundCloud Audio Player</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* CSS for the title, button, instructions, and sound name input block */
+      .title,
+      .button,
+      .instructions,
+      .sound-name {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .button i {
+        display: block;
+        font-size: 24px;
+        margin-bottom: 5px;
+      }
+
+      /* CSS for the instructions popup */
+      .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        z-index: 9999;
+        color: black;
+      }
+
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 9998;
+      }
+
+      /* CSS for the website background */
+      body {
+        background-color: black;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+    <script>
+      // JavaScript for the button and popup functionality
+      window.addEventListener("DOMContentLoaded", function () {
+        var button = document.getElementById("instruction-button");
+        var popup = document.getElementById("instruction-popup");
+        var overlay = document.getElementById("instruction-overlay");
+
+        button.addEventListener("click", function () {
+          popup.style.display = "block";
+          overlay.style.display = "block";
+        });
+
+        overlay.addEventListener("click", function () {
+          popup.style.display = "none";
+          overlay.style.display = "none";
+        });
+
+        var submitButton = document.getElementById("submit-button");
+        var answerText = document.getElementById("answer-text");
+        var soundNameInput = document.getElementById("sound-name-input");
+        var hiddenSongName = "YOUR_HIDDEN_SONG_NAME";
+
+        submitButton.addEventListener("click", function () {
+          var userAnswer = soundNameInput.value.trim();
+          if (userAnswer.toLowerCase() === hiddenSongName.toLowerCase()) {
+            answerText.textContent =
+              "You got it! The answer was the song name.";
+          } else {
+            answerText.textContent = "Sorry, that's not the correct answer.";
+          }
+          soundNameInput.value = "";
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1 class="title">My SoundCloud Audio Player</h1>
+
+    <div class="button">
+      <button id="instruction-button">
+        <i class="fas fa-question-circle"></i>
+        <span>Instructions</span>
+      </button>
+    </div>
+
+    <div class="popup" id="instruction-popup">
+      <p>These are the instructions for using the SoundCloud audio player:</p>
+      <ul>
+        <li>
+          Step 1: Replace 'YOUR_SOUND_CLOUD_TRACK_URL' with the actual
+          SoundCloud track URL.
+        </li>
+        <li>Step 2: Save the file and open it in a web browser.</li>
+        <li>
+          Step 3: Click the play button on the embedded audio player to start
+          playing the track.
+        </li>
+      </ul>
+    </div>
+
+    <div class="overlay" id="instruction-overlay"></div>
+
+    <!-- Replace 'YOUR_SOUND_CLOUD_TRACK_URL' with the actual SoundCloud track URL -->
+    <iframe
+      width="100%"
+      height="166"
+      scrolling="no"
+      frameborder="no"
+      allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=YOUR_SOUND_CLOUD_TRACK_URL"
+    ></iframe>
+
+    <div class="sound-name">
+      <input type="text" id="sound-name-input" placeholder="Enter Sound Name" />
+      <button id="submit-button">Submit</button>
+      <p id="answer-text" class="sound-name"></p>
+    </div>
+  </body>
+</html>
