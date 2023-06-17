@@ -15,18 +15,18 @@ const popupCloseButton = document.getElementById("popup-close-button");
 const instructionOverlay = document.getElementById("instruction-overlay");
 
 instructionsButton.addEventListener("click", () => {
-  instructionsPopup.classList.add("show");
-  instructionOverlay.classList.add("show");
+  instructionsPopup.style.display = "block";
+  instructionOverlay.style.display = "block";
 });
 
 popupCloseButton.addEventListener("click", () => {
-  instructionsPopup.classList.remove("show");
-  instructionOverlay.classList.remove("show");
+  instructionsPopup.style.display = "none";
+  instructionOverlay.style.display = "none";
 });
 
 instructionOverlay.addEventListener("click", () => {
-  instructionsPopup.classList.remove("show");
-  instructionOverlay.classList.remove("show");
+  instructionsPopup.style.display = "none";
+  instructionOverlay.style.display = "none";
 });
 
 // Handle user input and autocomplete functionality
