@@ -67,6 +67,8 @@ userInput.addEventListener("change", (event) => {
     document
       .querySelector(".try-square:nth-child(" + triesLeft + ")")
       .classList.add("correct");
+    userInput.disabled = true;
+    document.getElementById("submit-button").disabled = true;
   } else {
     document.getElementById("answer-text").textContent = "Sorry, try again.";
     document
@@ -88,7 +90,7 @@ answerText.style.color = "white";
 // Styling for the tries squares
 const triesSquares = document.querySelectorAll(".try-square");
 triesSquares.forEach((square) => {
-  square.style.backgroundColor = "#ddd";
+  square.style.backgroundColor = "lightgrey";
   square.style.borderRadius = "5px";
 });
 

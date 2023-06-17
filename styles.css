@@ -42,7 +42,7 @@ body {
   padding: 20px;
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 9999;
 }
 
@@ -79,7 +79,7 @@ body {
 .try-square {
   width: 30px;
   height: 30px;
-  background-color: #ddd;
+  background-color: lightgrey;
   border-radius: 5px;
   margin: 0 5px;
 }
@@ -99,6 +99,9 @@ body {
 
 .sound-name input {
   margin-right: 10px;
+  border-radius: 5px;
+  padding: 5px;
+  width: 200px;
 }
 
 .sound-name button {
